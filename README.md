@@ -1,2 +1,2 @@
-# Astrology-web
+# Astrology-
 website

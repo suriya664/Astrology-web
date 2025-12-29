@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Astrology & Horoscope Website - Discover your cosmic destiny">
+    <title>Cosmic Destiny - Premium Astrology & Horoscope</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg glass fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-icon me-2">
+                    <span>✨</span>
+                </div>
+                <span class="brand-text">Cosmic Destiny</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="home2.html">Home 2</a></li>
+                    
+                    <!-- Horoscopes Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="horoscopesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                            Horoscopes
+                        </a>
+                        <ul class="dropdown-menu glass" aria-labelledby="horoscopesDropdown">
+                            <li><a class="dropdown-item" href="daily-horoscope.html">Daily</a></li>
+                            <li><a class="dropdown-item" href="weekly-horoscope.html">Weekly</a></li>
+                            <li><a class="dropdown-item" href="monthly-horoscope.html">Monthly</a></li>
+                            <li><a class="dropdown-item" href="yearly-horoscope.html">Yearly</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Tools Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu glass" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="numerology.html">Numerology</a></li>
+                            <li><a class="dropdown-item" href="tarot.html">Tarot</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Explore Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu glass" aria-labelledby="exploreDropdown">
+                            <li><a class="dropdown-item" href="articles.html">Articles</a></li>
+                            <li><a class="dropdown-item" href="events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link nav-btn" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="astrology-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn register-btn" href="login.html#register">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="cosmic-bg"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="hero-title">Unlock the Secrets of the Stars</h1>
+                    <p class="hero-subtitle">Experience personalized cosmic guidance through advanced astrological readings and mystical insights</p>
+                    <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                        <a href="premium-reports.html" class="btn btn-gold btn-lg">Start Your Journey</a>
+                        <a href="premium-reports.html" class="btn btn-primary btn-lg">View Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Our Premium Services</h2>
+            <p class="text-center text-muted mb-5">Explore our range of mystical services designed to guide your</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card glass-card-strong h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-stars fs-1 text-gold"></i>
+                        </div>
+                        <h4 class="mb-3">Birth Chart Analysis</h4>
+                        <p class="card-text">Get a comprehensive analysis of your natal chart revealing your true cosmic blueprint and life.</p>
+                        <a href="premium-reports.html" class="btn btn-outline-light mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card glass-card-strong h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-heart-fill fs-1 text-danger"></i>
+                        </div>
+                         <h4 class="mb-3">Relationship </h4>
+                        <p class="card-text">Discover the connection between you and your partner with detailed compatibility reports.</p>
+                        <a href="premium-reports.html" class="btn btn-outline-light mt-3">View Reports</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card glass-card-strong h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-calendar-event fs-1 text-violet"></i>
+                        </div>
+                        <h4 class="mb-3">Yearly Forecast</h4>
+                        <p class="card-text">Plan your year ahead with detailed monthly forecasts and important astrological events.</p>
+                        <a href="yearly-horoscope.html" class="btn btn-outline-light mt-3">View Forecast</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Astrological Insights -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Understanding Your Cosmic Blueprint</h2>
+                    <p class="lead mb-4">Every person is born under a unique cosmic configuration that influences their personality, relationships, and life path.</p>
+                    <p class="mb-4">Our advanced astrological analysis combines traditional wisdom with modern insights to provide you with personalized guidance.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-gold me-2"></i> Detailed birth chart interpretation</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-gold me-2"></i> Planetary influences and aspects</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-gold me-2"></i> Career and life purpose guidance</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-gold me-2"></i> Relationship and compatibility insights</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card glass-card-strong p-4">
+                        <div class="text-center mb-4">
+                            <div class="zodiac-icon mx-auto mb-3" style="width: 80px; height: 80px; font-size: 3rem;">
+                                <span>🌙</span>
+                            </div>
+                            <h3>Your Astrological Profile</h3>
+                        </div>
+                        <p class="text-center">Discover how the planets and stars influence your daily life, relationships, and future opportunities.</p>
+                        <div class="d-grid mt-4">
+                            <a href="premium-reports.html" class="btn btn-gold btn-lg">Get Your Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">What Our Clients Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card neo-card h-100 p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-quote fs-1 text-gold"></i>
+                        </div>
+                        <p class="card-text mb-3">"The birth chart analysis was incredibly accurate and insightful. It helped me understand myself better and make life decisions."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="zodiac-icon me-3">⭐</div>
+                            <div>
+                                <strong>Sarah M.</strong>
+                                <br><small class="text-muted">Premium Member</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card neo-card h-100 p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-quote fs-1 text-gold"></i>
+                        </div>
+                        <p class="card-text mb-3">"The compatibility report was spot-on! It explained so much about our relationship dynamics and helped us communicate better."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="zodiac-icon me-3">⭐</div>
+                            <div>
+                                <strong>James & Lisa</strong>
+                                <br><small class="text-muted">Compatibility Users</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card neo-card h-100 p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-quote fs-1 text-gold"></i>
+                        </div>
+                        <p class="card-text mb-3">"I check my daily horoscope every morning. The insights are always relevant and help me navigate my day with more awareness."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="zodiac-icon me-3">⭐</div>
+                            <div>
+                                <strong>Michael R.</strong>
+                                <br><small class="text-muted">Daily Reader</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5" style="padding-bottom: 3rem !important;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card glass-card-strong text-center p-5">
+                        <h2 class="section-title mb-4">Begin Your Cosmic Journey Today</h2>
+                        <p class="lead mb-4">Join thousands of others who have discovered their cosmic destiny</p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                            <a href="premium-reports.html" class="btn btn-gold btn-lg">Get Started</a>
+                            <a href="login.html" class="btn btn-outline-light btn-lg">Sign Up Free</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass mt-5" style="position: relative; z-index: 1; display: block !important; visibility: visible !important;">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center mb-3" style="text-decoration: none;">
+                        <div class="logo-icon me-2">
+                            <span>✨</span>
+                        </div>
+                        <span class="brand-text">Cosmic Destiny</span>
+                    </a>
+                    <p class="text-muted small">Discover your cosmic destiny with premium astrology insights, horoscopes, and mystical guidance.</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="daily-horoscope.html" class="footer-link">Daily Horoscope</a></li>
+                        <li><a href="weekly-horoscope.html" class="footer-link">Weekly Horoscope</a></li>
+                        <li><a href="tarot.html" class="footer-link">Tarot Reading</a></li>
+                        <li><a href="premium-reports.html" class="footer-link">Premium Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="articles.html" class="footer-link">Articles</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="events.html" class="footer-link">Events</a></li>
+                        <li><a href="numerology.html" class="footer-link">Numerology</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="footer-title">Connect</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li>Email: <a href="mailto:info@cosmicdestiny.com" class="footer-link">info@cosmicdestiny.com</a></li>
+                        <li>Phone: <a href="tel:+1234567890" class="footer-link">+1 (234) 567-890</a></li>
+                    </ul>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="social-icon" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="text-center text-muted small">
+                <p>&copy; <span id="currentYearFooter"></span> Cosmic Destiny. All rights reserved. | <a href="#" class="footer-link">Privacy Policy</a> | <a href="#" class="footer-link">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('currentYearFooter').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

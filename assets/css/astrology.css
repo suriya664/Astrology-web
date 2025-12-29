@@ -1,0 +1,1164 @@
+/* ============================================
+   Astrology Dashboard - Custom Styles
+   ============================================ */
+
+:root {
+    /* Light Theme */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --sidebar-bg: linear-gradient(180deg, #6c5ce7 0%, #a29bfe 100%);
+    --accent-purple: #6c5ce7;
+    --accent-gold: #ffd700;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-card: rgba(30, 30, 50, 0.8);
+    --text-primary: #e2e8f0;
+    --text-secondary: #a0aec0;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --sidebar-bg: linear-gradient(180deg, #4a3f8f 0%, #6c5ce7 100%);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   Sidebar Styles
+   ============================================ */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--accent-gold);
+    color: white;
+    transform: translateX(5px);
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-left-color: var(--accent-gold);
+    color: white;
+}
+
+.nav-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-item.logout {
+    color: rgba(255, 200, 200, 0.9);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-item.logout:hover {
+    background: rgba(255, 0, 0, 0.2);
+    border-left-color: #ff6b6b;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Mobile Sidebar */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+
+.main-content {
+    margin-left: 280px;
+    min-height: 100vh;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+.mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.mobile-menu-btn {
+    background: var(--accent-purple);
+    border: none;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.mobile-title {
+    margin: 0;
+    font-weight: 700;
+}
+
+/* ============================================
+   Welcome Section
+   ============================================ */
+
+.welcome-section {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, #a29bfe 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.welcome-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.username {
+    color: var(--accent-gold);
+}
+
+.welcome-message {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.zodiac-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.zodiac-badge i {
+    color: var(--accent-gold);
+}
+
+/* ============================================
+   KPI Cards
+   ============================================ */
+
+.kpi-section {
+    margin-bottom: 2rem;
+}
+
+.kpi-section .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.kpi-section .col-md-6,
+.kpi-section .col-lg-3 {
+    display: flex;
+    align-items: stretch;
+}
+
+.kpi-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.kpi-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.kpi-icon.energy {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.kpi-icon.love {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.kpi-icon.career {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.kpi-icon.health {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.kpi-content {
+    flex: 1;
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.kpi-label {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Chart Cards
+   ============================================ */
+
+.charts-section {
+    margin-bottom: 2rem;
+}
+
+.charts-section .row {
+    display: flex;
+    align-items: stretch;
+}
+
+.charts-section .col-lg-8,
+.charts-section .col-lg-4,
+.charts-section .col-lg-12 {
+    display: flex;
+}
+
+.chart-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.card-header h5 i {
+    color: var(--accent-purple);
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-card .card-body {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card-body canvas {
+    max-width: 100%;
+    height: auto !important;
+    width: 100% !important;
+}
+
+/* ============================================
+   Horoscope Cards
+   ============================================ */
+
+.horoscope-section {
+    margin-bottom: 2rem;
+}
+
+.horoscope-section .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.horoscope-section .col-md-4 {
+    display: flex;
+    align-items: stretch;
+}
+
+.horoscope-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+
+.horoscope-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.horoscope-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.horoscope-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.horoscope-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+    width: 100%;
+}
+
+.rating-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.stars {
+    color: var(--accent-gold);
+}
+
+.rating-value {
+    font-weight: 600;
+    color: var(--accent-purple);
+}
+
+/* ============================================
+   Astro Tools
+   ============================================ */
+
+.astro-tools-section {
+    margin-bottom: 2rem;
+}
+
+.astro-tools-section .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.astro-tools-section .col-md-6,
+.astro-tools-section .col-lg-3 {
+    display: flex;
+    align-items: stretch;
+}
+
+.tool-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-gold));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.tool-card h6 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tool-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tool-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    display: block;
+}
+
+.color-gold {
+    color: var(--accent-gold) !important;
+}
+
+.btn-tool {
+    background: linear-gradient(135deg, var(--accent-purple), #a29bfe);
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-tool:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+}
+
+/* ============================================
+   Table Section
+   ============================================ */
+
+.table-section {
+    margin-bottom: 2rem;
+}
+
+.table-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    width: 100%;
+}
+
+.table-card .card-body {
+    overflow: visible;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .table-card .card-body {
+        padding: 0.75rem;
+        overflow-x: auto;
+    }
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-input {
+    width: 250px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    display: block;
+}
+
+.table {
+    margin: 0;
+    width: 100%;
+}
+
+.table thead th {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.bg-career {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.bg-love {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.bg-health {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    color: white;
+}
+
+.bg-energy {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.pagination-wrapper {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .page-link {
+    color: var(--accent-purple);
+    border-color: var(--border-color);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+
+/* ============================================
+   Panels Section
+   ============================================ */
+
+.panels-section {
+    margin-bottom: 2rem;
+}
+
+.panels-section .row {
+    display: flex;
+    align-items: stretch;
+}
+
+.panels-section .col-lg-4,
+.panels-section .col-lg-8 {
+    display: flex;
+}
+
+.panel-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: var(--bg-secondary);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-purple), #a29bfe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.notification-content h6 {
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+}
+
+.notification-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.notification-time {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-avatar {
+    font-size: 5rem;
+    color: var(--accent-purple);
+    margin-bottom: 1rem;
+}
+
+.profile-info h5 {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.profile-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--accent-purple);
+}
+
+/* ============================================
+   Container & Alignment
+   ============================================ */
+
+.container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container-fluid .row {
+    justify-content: center;
+    align-items: stretch;
+}
+
+.container-fluid .row > [class*="col-"] {
+    display: flex;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 991px) {
+    /* Tablet */
+    .container-fluid .row {
+        justify-content: center;
+        align-items: stretch;
+    }
+    
+    .container-fluid .row > [class*="col-"] {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin-bottom: 1rem;
+    }
+    
+    .kpi-card,
+    .horoscope-card,
+    .tool-card,
+    .chart-card,
+    .panel-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        height: 100%;
+    }
+    
+    .kpi-card {
+        justify-content: center;
+        text-align: center;
+        min-height: 140px;
+    }
+    
+    .kpi-content {
+        text-align: center;
+    }
+    
+    .horoscope-card {
+        min-height: 250px;
+    }
+    
+    .tool-card {
+        min-height: 200px;
+    }
+    
+    .chart-card {
+        min-height: 300px;
+    }
+    
+    .panel-card {
+        min-height: 350px;
+    }
+    
+    .table-responsive {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table {
+        min-width: 700px;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile */
+    .welcome-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .welcome-message {
+        text-align: center;
+    }
+    
+    .kpi-value {
+        font-size: 1.5rem;
+    }
+    
+    .main-content {
+        padding: 1rem 0.5rem;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+    
+    .container-fluid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .container-fluid .row {
+        justify-content: center;
+        align-items: stretch;
+        margin: 0;
+    }
+    
+    .container-fluid .row > [class*="col-"] {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .table-responsive {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .table {
+        min-width: 600px;
+        font-size: 0.85rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 0.75rem 0.5rem;
+        white-space: nowrap;
+        font-size: 0.8rem;
+    }
+    
+    .table thead th {
+        font-size: 0.75rem;
+    }
+    
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .table-card .card-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .table-card .card-header h5 {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .header-actions {
+        width: 100%;
+    }
+    
+    .kpi-card {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem 1rem;
+    }
+    
+    .kpi-icon {
+        margin: 0 auto;
+    }
+    
+    .horoscope-card,
+    .tool-card,
+    .chart-card,
+    .panel-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .card-header {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .card-body {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .zodiac-badge {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-section {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .welcome-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .kpi-card {
+        flex-direction: column;
+        text-align: center;
+        min-height: 160px;
+    }
+    
+    .kpi-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .profile-stats {
+        gap: 0.75rem;
+    }
+    
+    .tool-card {
+        min-height: 180px;
+    }
+    
+    .horoscope-card {
+        min-height: 220px;
+    }
+    
+    .container-fluid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kpi-card,
+.chart-card,
+.horoscope-card,
+.tool-card,
+.table-card,
+.panel-card {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
